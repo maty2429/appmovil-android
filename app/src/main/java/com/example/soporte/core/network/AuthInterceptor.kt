@@ -13,13 +13,18 @@ class AuthInterceptor @Inject constructor(
         val request = chain.request()
         val token = tokenManager.getToken()
 
-        if (token.isNullOrBlank()) {
+        // Evita agregar header cuando pedimos el propio token OAuth
+        if (request.url.encodedPath.contains("/token")) {
             return chain.proceed(request)
         }
 
-        val authenticatedRequest = request.newBuilder()
-            .addHeader("Authorization", "Bearer $token")
-            .build()
+        val authenticatedRequest = if (!token.isNullOrBlank()) {
+            request.newBuilder()
+                .addHeader("Authorization", "Bearer $token")
+                .build()
+        } else {
+            request
+        }
 
         return chain.proceed(authenticatedRequest)
     }

@@ -18,6 +18,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "OAUTH_CLIENT_ID", "\"4EzEnQyFwBeBakD6EFD5hxfS1nsa\"")
+        buildConfigField("String", "OAUTH_CLIENT_SECRET", "\"FwBeWLzIFahcG4oPan4PrfFGQsIa\"")
     }
 
     buildTypes {
@@ -39,6 +41,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

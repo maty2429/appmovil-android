@@ -2,6 +2,7 @@ package com.example.soporte.core.di
 
 import com.example.soporte.core.network.AuthInterceptor
 import com.example.soporte.features.auth.data.remote.AuthApi
+import com.example.soporte.features.auth.data.remote.OAuthApi
 import com.example.soporte.features.tickets.data.remote.TicketApi
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -84,4 +85,9 @@ object NetworkModule {
     @Singleton
     fun provideTicketApi(@Named("retrofit_tickets") retrofit: Retrofit): TicketApi =
         retrofit.create(TicketApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideOAuthApi(@Named("retrofit_oauth") retrofit: Retrofit): OAuthApi =
+        retrofit.create(OAuthApi::class.java)
 }
