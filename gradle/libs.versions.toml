@@ -1,5 +1,5 @@
 [versions]
-agp = "8.4.1" # Actualiza esta línea
+agp = "8.13.1" # Actualiza esta línea
 kotlin = "2.0.21"
 coreKtx = "1.12.0"
 lifecycleRuntimeKtx = "2.7.0"
@@ -53,6 +53,7 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.r
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
 moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
 moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
